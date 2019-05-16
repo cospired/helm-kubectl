@@ -7,19 +7,20 @@
 
 Supported tags and release links
 
+* [2.14.0](https://github.com/cospired/helm-kubectl/releases/tag/2.14.0) - helm v2.14.0, kubectl v1.14.1, alpine 3.9
 * [2.13.1](https://github.com/cospired/helm-kubectl/releases/tag/2.13.1) - helm v2.13.1, kubectl v1.14.1, alpine 3.9
-
 
 for older version (and without gettext), see [dtzar/helm-kubectl](https://github.com/dtzar/helm-kubectl)
 
 ## Overview
 
-This lightweight alpine docker image provides kubectl and helm binaries for working with a Kubernetes cluster.  A local configured kubectl is a prerequisite to use helm per [helm documentation](https://github.com/kubernetes/helm/blob/master/docs/quickstart.md).  This image is useful for general helm administration such as deploying helm charts and managing releases. It is also perfect for any automated deployment pipeline needing to use helm which supports docker images such as [Concourse CI](https://concourse.ci), [Jenkins on Kubernetes](https://kubeapps.com/charts/stable/jenkins), [Travis CI](https://docs.travis-ci.com/user/docker/), and [Circle CI](https://circleci.com/integrations/docker/).  Having bash installed allows for better support for troubleshooting by being able to exec / terminal in and run desired shell scripts.  Git installed allows installation of [helm plugins](https://github.com/kubernetes/helm/blob/master/docs/plugins.md). Gettext installed allows usage of `` for simple variable replacements
+This lightweight alpine docker image provides kubectl and helm binaries for working with a Kubernetes cluster.  A local configured kubectl is a prerequisite to use helm per [helm documentation](https://github.com/kubernetes/helm/blob/master/docs/quickstart.md).  This image is useful for general helm administration such as deploying helm charts and managing releases. It is also perfect for any automated deployment pipeline needing to use helm which supports docker images such as [Concourse CI](https://concourse.ci), [Jenkins on Kubernetes](https://kubeapps.com/charts/stable/jenkins), [Travis CI](https://docs.travis-ci.com/user/docker/), and [Circle CI](https://circleci.com/integrations/docker/).  Having bash installed allows for better support for troubleshooting by being able to exec / terminal in and run desired shell scripts.  Git installed allows installation of [helm plugins](https://github.com/kubernetes/helm/blob/master/docs/plugins.md). Gettext installed allows usage of `envsubst` for simple variable replacements
 
 If it is desired to only use kubectl and have kubectl as the entry command (versus this image as bash entry command), I recommend checking out this image instead:
 [lachlanevenson/kubectl](https://hub.docker.com/r/lachlanevenson/k8s-kubectl/)
 
 This is a fork of [dtzar/helm-kubectl](https://hub.docker.com/r/dtzar/helm-kubectl/)
+
 ## Run
 
 Example to just run helm on entry:
